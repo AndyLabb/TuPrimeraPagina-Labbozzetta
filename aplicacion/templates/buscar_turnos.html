@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block title %}Buscar Turnos{% endblock %}
+
+{% block content %}
+<h2>Buscar Turnos por Alumno</h2>
+
+<form method="get">
+    <input type="text" name="q" value="{{ query }}" placeholder="Nombre o apellido del alumno">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+    <h3>Resultados:</h3>
+    <ul>
+    {% for turno in resultados %}
+        <li>
+            {{ turno.alumno.nombre }} {{ turno.alumno.apellido }} -
+            {{ turno.get_tipo_turno_display }} ({{ turno.dias }}) -
+            Instructor: {{ turno.instructor.nombre }} {{ turno.instructor.apellido }}
+        </li>
+    {% endfor %}
+    </ul>
+{% elif query %}
+    <p>No se encontraron turnos para "{{ query }}"</p>
+{% endif %}
+{% endblock %}

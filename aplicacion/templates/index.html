@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>{% block title %}Escuela de SKi y Snowboard{% endblock %}</title>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'aplicacion/assets/favicon.ico' %}" />
+    <link href="https://use.fontawesome.com/releases/v6.3.0/js/all.js" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet" />
+    <link href="{% static 'aplicacion/css/styles.css' %}" rel="stylesheet" />
+</head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">Clases para niños</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Clases privadas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Alquiler de equipos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Jibbin escuela de Ski y Snowboard</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">¿Estás listo para vivir una experiencia inolvidable?</h2>
+                        <a class="btn btn-primary" href="#about">Productos</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+<section class="py-5">
+    <div class="container">
+        <!-- Contenido dinámico -->
+    </div>
+</section>
+{% endblock %}
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <p class="text-white mb-4" style="font-size: 1.1rem; line-height: 1.6;">
+                            En nuestra escuela de ski nos especializamos en la enseñanza de niños, brindando <strong>clases grupales diseñadas para edades entre 4 y 12 años</strong>. Nuestro enfoque combina <strong>seguridad, aprendizaje progresivo y diversión en la montaña</strong>.<br><br>
+                        
+                            Dividimos los grupos por <strong>nivel técnico</strong> y <strong>edad</strong>, para que cada niño pueda desarrollarse a su ritmo y disfrutar al máximo de la experiencia.<br><br>
+                        
+                            🧒 <strong>De 4 a 8 años</strong>: grupos reducidos, con un máximo de <strong>5 niños por instructor</strong>, priorizando la atención personalizada y el juego como método de aprendizaje.<br>
+                            👧 <strong>De 9 a 12 años</strong>: grupos de hasta <strong>máximo 7 niños</strong>, trabajando con mayor autonomía y dinámica grupal.<br><br>
+                        
+                            Cada clase está guiada por instructores con experiencia y vocación, enfocados en generar confianza, progresar en técnica y, sobre todo, ¡disfrutar del ski!
+                        </p>
+                        <p class="text-white-100">
+                        </p>
+                    </div>
+                </div>
+                <img class="img-fluid" src="{% static 'aplicacion/assets/img/ipad.png' %}" alt="..." />
+            </div>
+        </section>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{% static 'aplicacion/assets/img/bg-masthead.jpg' %}" alt="..." />
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Clases Privadas</h4>
+                            <p class="text-black-50 mb-0">Estas clases están pensadas para que el alumno aproveche al máximo su tiempo de aprendizaje con un instructor exclusivo a su disposición la cantidad de horas que desee. Es una clase apta tanto para principiantes como para quienes quieren mejorar su técnica de ski o snowboard.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="{% static 'aplicacion/assets/img/demo-image-01.jpg' %}" alt="..." />
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Clases Grupales</h4>
+                                    <p class="mb-0 text-white-50">En estas clases son para aquellos que nunca experimentaron el esqui. Los alumnos pueden integrarse a un grupo de aprendizaje con personas que se encuentran en su mismo nivel de ski o snowboard y disfrutar la montaña con ellos. Es ideal para grupos de amigos o familiares que deseen compartir la montaña juntos. </p>
+                                    <p class="mb-0 text-white-50">El mínimo de integrantes de la clase grupal es de 5 personas y el máximo de 12 personas en Ski y 8 personas en Snowboard</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0 text-white-50">----</p>
+                <p class="mb-0 text-white-50">----</p>
+                <!-- Project Two Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="{% static 'aplicacion/assets/img/demo-image-02.jpg' %}" alt="..." />
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Clases Freestyle y Freeride</h4>
+                                    <p class="mb-0 text-white-50">Las Clases de Freestyle están pensadas para los alumnos más intrépidos, quienes desean aprender o mejorar sus habilidades en saltos, cajones y barandas del snowpark de forma segura y divertida. Para niveles intermedios o avanzados de ski o snowboard.
+                                        Duración de medio día o día completo y el máximo de alumnos es de 6 personas.</p>
+                                        <p class="mb-0 text-white-50"></p>
+                                        <p class="mb-0 text-white-50">Las Clases de Freeride son ideales para quienes se animan a aventurarse en la montaña y marcar su propia huella en la nieve. Estas clases están diseñadas para que el alumno aprenda o mejore su técnica fuera de pista y en sectores diferentes de la montaña. 
+                                        Para niveles intermedios o avanzados de ski o snowboard.
+                                        Duración de medio día o día completo y el máximo de alumnos es de 6 personas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5">Solicitanos tu presupuesto de qeuipos</h2>
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Email address input-->
+                            <div class="row input-group-newsletter">
+                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                            </div>
+                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
+                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3 mt-2 text-white">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">+1 (555) 902-8832</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2023</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'aplicacion/js/scripts.js' %}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

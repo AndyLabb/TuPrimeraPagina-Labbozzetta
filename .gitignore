@@ -1,0 +1,23 @@
+# Entorno virtual
+env/
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de base de datos
+db.sqlite3
+TuPrimeraPagina_labbozzzetta.db
+
+# Archivos de configuración del editor
+.vscode/
+.idea/
+
+# Archivos de migración (opcional)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
