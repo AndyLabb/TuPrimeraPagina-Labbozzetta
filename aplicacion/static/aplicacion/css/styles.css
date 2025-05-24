@@ -11201,3 +11201,71 @@ body {
 .footer {
   padding: 5rem 0;
 }
+/* === Estilo personalizado para formularios Jibbin === */
+.form-control-dark {
+  background-color: #1b1b1b;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.form-control-dark::placeholder {
+  color: #888;
+}
+
+.form-select.form-control-dark {
+  background-color: #1b1b1b;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.btn-warning {
+  background-color: #f9d342;
+  border-color: #f9d342;
+  color: #111;
+}
+
+.btn-warning:hover {
+  background-color: #f7c600;
+  border-color: #f7c600;
+  color: #000;
+}
+
+.bg-black {
+  background-color: #000 !important;
+}
+/* Estilo base de formularios en modo oscuro */
+.form-control-dark {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.form-control-dark::placeholder {
+  color: #bbb;
+}
+
+.form-control-dark:focus {
+  border-color: #ffa500; /* un naranja cálido */
+  box-shadow: 0 0 0 0.2rem rgba(255,165,0,0.25);
+}
+
+/* Estilo personalizado para botones */
+.btn-warning {
+  background-color: #ff9800;
+  border-color: #ff9800;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #e68900;
+  border-color: #e68900;
+}
+/* Opcional para personalizar los campos del formulario */
+input, select, textarea {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}

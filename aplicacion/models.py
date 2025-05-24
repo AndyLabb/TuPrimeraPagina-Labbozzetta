@@ -29,26 +29,19 @@ class Alumno(models.Model):
         return f"{self.nombre} {self.apellido}"
 
 
+from django.db import models
+
 class Turno(models.Model):
     TIPOS_TURNO = [
         ('MD', 'Medio día'),
         ('DC', 'Día completo'),
     ]
 
-    DIAS_SEMANA = [
-        ('LU', 'Lunes'),
-        ('MA', 'Martes'),
-        ('MI', 'Miércoles'),
-        ('JU', 'Jueves'),
-        ('VI', 'Viernes'),
-        ('SA', 'Sábado'),
-        ('DO', 'Domingo'),
-    ]
-
     tipo_turno = models.CharField(max_length=2, choices=TIPOS_TURNO)
-    dias = models.CharField(max_length=100)
+    fecha = models.DateField(null=True, blank=True)  # <--- a futuro modificare esta linea para hacerla mas dinamica y poder elegir varios dias
+
     alumno = models.ForeignKey('Alumno', on_delete=models.CASCADE)
     instructor = models.ForeignKey('Instructor', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_tipo_turno_display()} - {self.dias} - {self.alumno} - {self.instructor}"
+        return f"{self.get_tipo_turno_display()} - {self.fecha} - {self.alumno} - {self.instructor}"

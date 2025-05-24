@@ -3,25 +3,36 @@
 {% block title %}Buscar Turnos{% endblock %}
 
 {% block content %}
-<h2>Buscar Turnos por Alumno</h2>
+<div class="container py-5">
+    <h2 class="text-center mb-4">Buscar Turnos por Alumno</h2>
 
-<form method="get">
-    <input type="text" name="q" value="{{ query }}" placeholder="Nombre o apellido del alumno">
-    <button type="submit">Buscar</button>
-</form>
+    <form method="get" class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <input type="text" name="q" value="{{ query }}" class="form-control form-control-lg" placeholder="Nombre o apellido del alumno">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-warning btn-lg">Buscar</button>
+        </div>
+    </form>
 
-{% if resultados %}
-    <h3>Resultados:</h3>
-    <ul>
-    {% for turno in resultados %}
-        <li>
-            {{ turno.alumno.nombre }} {{ turno.alumno.apellido }} -
-            {{ turno.get_tipo_turno_display }} ({{ turno.dias }}) -
-            Instructor: {{ turno.instructor.nombre }} {{ turno.instructor.apellido }}
-        </li>
-    {% endfor %}
-    </ul>
-{% elif query %}
-    <p>No se encontraron turnos para "{{ query }}"</p>
-{% endif %}
+    {% if resultados %}
+        <div class="card shadow">
+            <div class="card-body">
+                <h4 class="mb-3">Resultados:</h4>
+                <ul class="list-group list-group-flush">
+                {% for turno in resultados %}
+                    <li class="list-group-item">
+                        <strong>Alumno:</strong> {{ turno.alumno.nombre }} {{ turno.alumno.apellido }}<br>
+                        <strong>Tipo de turno:</strong> {{ turno.get_tipo_turno_display }}<br>
+                        <strong>Fecha:</strong> {{ turno.fecha }}<br>
+                        <strong>Instructor:</strong> {{ turno.instructor.nombre }} {{ turno.instructor.apellido }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% elif query %}
+        <div class="alert alert-danger text-center">No se encontraron turnos para "{{ query }}"</div>
+    {% endif %}
+</div>
 {% endblock %}

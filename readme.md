@@ -1,6 +1,7 @@
 # TuPrimeraPagina+Labbozzetta
 
 Proyecto realizado para la entrega de Coderhouse - Curso Django.
+Proyecto web creado con Django utilizando el patrón MVT. Esta web simula una plataforma de gestión para una escuela de ski y snowboard.
 
 ---
 
@@ -25,9 +26,17 @@ Aplicación web para una escuela de ski y snowboard que permite:
 
 ---
 
-## Cómo probarlo
+##  Tecnología utilizada
 
-### 1. Clonar el repositorio
-```bash
-git clone https://github.com/tu_usuario/TuPrimeraPagina+Labbozzetta.git
-cd TuPrimeraPagina+Labbozzetta
+- Python 3
+- Django
+- Bootstrap (a través de una plantilla de StartBootstrap)
+- HTML + CSS (herencia de plantillas)
+- ORM Django (con base de datos `.db` local)
+
+## Instalación y ejecución
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/TU_USUARIO/TuPrimeraPagina+Labbozzetta.git
+   cd TuPrimeraPagina+Labbozzetta

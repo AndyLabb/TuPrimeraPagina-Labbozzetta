@@ -3,10 +3,32 @@
 {% block title %}Crear Alumno{% endblock %}
 
 {% block content %}
-<h2>Formulario: Crear Alumno</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Guardar Alumno</button>
-</form>
+<section class="py-5 bg-black text-white">
+    <div class="container px-4 px-lg-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+        <div class="card bg-dark border-0 shadow-lg">
+            <div class="card-body p-4">
+            <h3 class="text-center mb-4">Formulario: Crear Alumno</h3>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label class="form-label">{{ field.label_tag }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="text-danger small">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="text-center">
+                <button type="submit" class="btn btn-warning">Guardar Alumno</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
 {% endblock %}
