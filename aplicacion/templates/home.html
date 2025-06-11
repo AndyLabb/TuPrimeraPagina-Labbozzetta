@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h2 class="text-center my-4">Jibbin Escuela de Ski y Snowboard</h2>
+<div class="d-flex flex-column align-items-center gap-3 my-4">
+    <a href="{% url 'crear_alumno' %}" class="btn btn-verde btn-lg w-50">Crear Alumno</a>
+    <a href="{% url 'crear_turno' %}" class="btn btn-amarillo btn-lg w-50">Asignar Turno</a>
+    <a href="{% url 'buscar_turnos' %}" class="btn btn-naranja btn-lg w-50">Buscar Turnos</a>
+    
+</div>
+
+{% endblock %}

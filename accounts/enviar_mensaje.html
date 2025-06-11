@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Enviar mensaje{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4">Enviar mensaje a la escuela</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" class="card p-4 shadow">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="id_asunto" class="form-label">Asunto</label>
+                    {{ form.asunto }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_mensaje" class="form-label">Mensaje</label>
+                    {{ form.mensaje }}
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

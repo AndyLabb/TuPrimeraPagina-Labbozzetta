@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load form_extras %}
+{% load static %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4">Crear cuenta</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" class="card p-4 shadow">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nombre de usuario</label>
+                    {{ form.username|add_class:"form-control" }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    {{ form.email|add_class:"form-control" }}
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="password1" class="form-label">Contraseña</label>
+                    {{ form.password1|add_class:"form-control" }}
+                    <div class="form-text text-muted">
+                        La contraseña debe contener al menos 8 caracteres, no debe ser totalmente numérica y no debe parecerse a tu nombre de usuario o email.
+                    </div>
+                </div>
+                
+
+                <div class="mb-3">
+                    <label for="password2" class="form-label">Confirmar contraseña</label>
+                    {{ form.password2|add_class:"form-control" }}
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Registrarse</button>
+                </div>
+
+                <div class="text-center mt-3">
+                    <a href="{% url 'login' %}">¿Ya tenés cuenta? Iniciar sesión</a><br>
+                    <a href="{% url 'home' %}" class="btn btn-secondary mt-2">Volver al inicio</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

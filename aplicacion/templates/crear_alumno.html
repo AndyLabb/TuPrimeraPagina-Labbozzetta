@@ -1,4 +1,5 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
+{% load form_extras %}
 
 {% block title %}Crear Alumno{% endblock %}
 
@@ -14,12 +15,14 @@
                 {% csrf_token %}
                 {% for field in form %}
                 <div class="mb-3">
-                    <label class="form-label">{{ field.label_tag }}</label>
-                    {{ field }}
+                    <label class="form-label text-white">{{ field.label_tag }}</label>
+                    <div class="form-check text-white">
+                        {{ field }}
+                    </div>
                     {% if field.errors %}
                     <div class="text-danger small">{{ field.errors }}</div>
                     {% endif %}
-                </div>
+                </div>                
                 {% endfor %}
                 <div class="text-center">
                 <button type="submit" class="btn btn-warning">Guardar Alumno</button>

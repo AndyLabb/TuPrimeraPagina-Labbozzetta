@@ -1,37 +1,115 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>{% block title %}Escuela de SKi y Snowboard{% endblock %}</title>
-
-    <link rel="icon" type="image/x-icon" href="{% static 'aplicacion/assets/favicon.ico' %}" />
-    <link href="https://use.fontawesome.com/releases/v6.3.0/js/all.js" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet" />
-    <link href="{% static 'aplicacion/css/styles.css' %}" rel="stylesheet" />
-</head>
+<html lang="es">
+    <head>
+        {% load static %}
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- Estilos personalizados -->
+        <style>
+            .btn-verde {
+                background-color: #28a745 !important;
+                color: white !important;
+            }
+        
+            .btn-verde:hover {
+                background-color: #218838 !important;
+            }
+        
+            .btn-amarillo {
+                background-color: #ffc107 !important;
+                color: black !important;
+            }
+        
+            .btn-amarillo:hover {
+                background-color: #e0a800 !important;
+            }
+        
+            .btn-naranja {
+                background-color: #fd7e14 !important;
+                color: white !important;
+            }
+        
+            .btn-naranja:hover {
+                background-color: #e66900 !important;
+            }
+        </style>
+        
+    
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %}Escuela de Ski y Snowboard{% endblock %}</title>
+    
+        <link rel="icon" type="image/x-icon" href="{% static 'aplicacion/assets/favicon.ico' %}" />
+        
+        <!-- Otros estilos y fuentes -->
+        <link href="https://use.fontawesome.com/releases/v6.3.0/js/all.js" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet" />
+        
+        <!-- Tu CSS personalizado -->
+        <link href="{% static 'aplicacion/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="{% url 'home' %}">JIBBIN ESCUELA DE SKI y SNOWBOARD</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
+        
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">Clases para niños</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Clases privadas</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Alquiler de equipos</a></li>
-                    </ul>
+        
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'crear_alumno' %}">Cargar Alumno</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'crear_turno' %}">Asignar Turno</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'buscar_turnos' %}">Buscar Turnos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'sobre_mi' %}">Sobre mí</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'editar_perfil' %}">Mi Perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'enviar_mensaje' %}">Enviar mensaje</a></li>
+                    
+                        <!-- Avatar y nombre de usuario -->
+                        <li class="nav-item d-flex align-items-center ms-3">
+                            <a href="{% url 'editar_perfil' %}" class="d-flex align-items-center text-decoration-none text-dark">
+                                {% if user.userprofile.avatar %}
+                                    <img src="{{ user.userprofile.avatar.url }}" alt="Avatar" class="rounded-circle me-2" width="35" height="35">
+                                {% else %}
+                                    <img src="{% static 'aplicacion/assets/img/default_avatar.jpg' %}" alt="Avatar" class="rounded-circle me-2" width="35" height="35">
+                                {% endif %}
+                                <span class="fw-bold">{{ user.username }}</span>
+                            </a>
+                        </li>
+                    
+                        <!-- Logout -->
+                        <li class="nav-item">
+                            <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-link nav-link" style="border: none; background: none; padding: 0; cursor: pointer;">
+                                    Salir
+                                </button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Ingresar</a></li>
+                    {% endif %}
+                                        </ul>
                 </div>
             </div>
         </nav>
+        
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">

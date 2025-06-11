@@ -1,23 +1,42 @@
 # Entorno virtual
 env/
+venv/
 
-# Archivos temporales de Python
+# Archivos de base de datos
+db.sqlite3
+*.db
+
+# Archivos Python compilados
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Archivos de base de datos
-db.sqlite3
-TuPrimeraPagina_labbozzzetta.db
-
-# Archivos de configuración del editor
-.vscode/
-.idea/
-
-# Archivos de migración (opcional)
+# Archivos de migraciones (compilados o temporales)
 **/migrations/*.pyc
 **/migrations/__pycache__/
+**/migrations/*.log
+**/migrations/*.tmp
 
-# Archivos del sistema
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos del sistema operativo
 .DS_Store
 Thumbs.db
+
+# Archivos estáticos generados y media (opcional)
+staticfiles/
+media/
+
+# Archivos de logs
+*.log
+
+# Archivos de pruebas o resultados temporales
+*.bak
+*.tmp
+*.old
+
+

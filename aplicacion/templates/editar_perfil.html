@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Editar Perfil{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4">Editar Perfil</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" enctype="multipart/form-data" class="card p-4 shadow">
+                {% csrf_token %}
+
+                <div class="text-center mb-3">
+                    {% if profile_form.instance.avatar %}
+                        <img src="{{ profile_form.instance.avatar.url }}" alt="Avatar" class="rounded-circle" width="150" height="150">
+                        <a href="{% url 'eliminar_avatar' %}" class="btn btn-danger mt-2">Eliminar avatar</a>
+                    {% else %}
+                        <img src="{% static 'aplicacion/assets/img/default_avatar.jpg' %}" class="rounded-circle" width="150" height="150">
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_avatar" class="form-label">Cambiar avatar:</label>
+                    {{ profile_form.avatar }}
+                </div>
+
+                {{ user_form.as_p }}
+                {{ profile_form.bio.label_tag }} {{ profile_form.bio }}
+                {{ profile_form.birth_date.label_tag }} {{ profile_form.birth_date }}
+
+                <button type="submit" class="btn btn-primary mt-3">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
